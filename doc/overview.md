@@ -1,9 +1,12 @@
-This cookbook install HazelCast in very basic manner.
+This cookbook installs Hazelcast in very basic manner.
 
-# Download URL
+# Usage
 
-Each time you're trying to download archive from site it has downloaded differently with checksum mismatch. That's why you have to mirror distributive somewhere, calculate checksum and provide this information to cookbook.
+Modify `default['hazelcast']['download_url']` and `default['hazelcast'][checksum']` to change hazelcast version.
+Jar name to use will be extracted from this url.
 
 # Configuration
 
-Modify `node['hazelcast']['java_opts']` to configure hazelcast. Provide your own template for this
+There is only one configuration way available: `node['hazelcast']['java_opts']`
+Use it to configure both java and hazelcast.
+Provide your own hazelcast.xml for this in your wrapper cookbook

@@ -1,7 +1,9 @@
+include_recipe 'simple-hazelcast::_jar'
+
 user 'hazelcast user' do
   username node['hazelcast']['user']
   comment 'Hazelcast User'
-  home "#{node['hazelcast']['prefix_home']}/hazelcast"
+  home node['hazelcast']['home']
   shell '/bin/bash'
   supports manage_home: false
   action :create
@@ -9,24 +11,22 @@ user 'hazelcast user' do
 end
 
 group 'hazelcast group' do
-  group_name node['hazelcast']['user']
+  group_name node['hazelcast']['group']
   action :create
   system true
 end
 
-if node['hazelcast']['download_url'].nil?
-  Chef::Log.warn('Hazelcast download url is not set. I am unable to ark it from nowhere :(')
-elsif node['hazelcast']['checksum'].nil?
-  Chef::Log.warn('Hazelcast checksum is not set. I will redownload it each run, thats is bad I think :(')
-else
-  ark 'hazelcast' do
-    url node['hazelcast']['download_url']
-    owner node['hazelcast']['user']
-    group node['hazelcast']['group']
-    version node['hazelcast']['version']
-    checksum node['hazelcast']['checksum']
+directory node['hazelcast']['home'] do
+  owner node['hazelcast']['user']
+  group node['hazelcast']['group']
 
-    prefix_root node['hazelcast']['prefix_home']
-    prefix_home node['hazelcast']['prefix_home']
-  end
+  recursive true
+end
+
+remote_file node['hazelcast']['jar'] do
+  source node['hazelcast']['download_url']
+
+  owner node['hazelcast']['user']
+  group node['hazelcast']['group']
+  checksum node['hazelcast']['checksum']
 end

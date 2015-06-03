@@ -1,14 +1,17 @@
 # Description
 
-This cookbook install HazelCast in very basic manner.
+This cookbook installs Hazelcast in very basic manner.
 
-# Download URL
+# Usage
 
-Each time you're trying to download archive from site it has downloaded differently with checksum mismatch. That's why you have to mirror distributive somewhere, calculate checksum and provide this information to cookbook.
+Modify `default['hazelcast']['download_url']` and `default['hazelcast'][checksum']` to change hazelcast version.
+Jar name to use will be extracted from this url.
 
 # Configuration
 
-Modify `node['hazelcast']['java_opts']` to configure hazelcast. Provide your own template for this
+There is only one configuration way available: `node['hazelcast']['java_opts']`
+Use it to configure both java and hazelcast.
+Provide your own hazelcast.xml for this in your wrapper cookbook
 
 # Requirements
 
@@ -25,10 +28,10 @@ Modify `node['hazelcast']['java_opts']` to configure hazelcast. Provide your own
 
 * `node['hazelcast']['user']` -  Defaults to `hazelcast`.
 * `node['hazelcast']['group']` -  Defaults to `hazelcast`.
-* `node['hazelcast']['download_url']` -  Defaults to `nil`.
-* `node['hazelcast']['checksum']` -  Defaults to `nil`.
-* `node['hazelcast']['version']` -  Defaults to `3.4.2`.
-* `node['hazelcast']['prefix_home']` -  Defaults to `/opt`.
+* `node['hazelcast']['home']` -  Defaults to `/opt/hazelcast`.
+* `node['hazelcast']['download_url']` -  Defaults to `https://oss.sonatype.org/content/repositories/releases/com/hazelcast/hazelcast-all/3.4.2/hazelcast-all-3.4.2.jar`.
+* `node['hazelcast']['checksum']` -  Defaults to `d80efb8c56373bd175f8a45f300ba3a33d007be2413ccc62a848ade54af04a17`.
+* `node['hazelcast']['java_home']` -  Defaults to `nil`.
 * `node['hazelcast']['java_opts']` -  Defaults to `[ ... ]`.
 
 # Recipes
