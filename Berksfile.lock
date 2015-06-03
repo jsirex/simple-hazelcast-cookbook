@@ -17,7 +17,7 @@ GRAPH
   packagecloud (0.0.18)
   runit (1.6.0)
     packagecloud (>= 0.0.0)
-  simple-hazelcast (0.1.0)
+  simple-hazelcast (0.2.0)
     ark (>= 0.0.0)
     runit (>= 0.0.0)
   simple-hazelcast-test (0.1.0)
