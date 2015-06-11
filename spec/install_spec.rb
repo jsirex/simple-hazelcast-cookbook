@@ -10,14 +10,6 @@ describe 'simple-hazelcast::install' do
     end.converge(described_recipe)
   end
 
-  it 'creates user' do
-    expect(chef_run).to create_user('user').with(home: '/home/user')
-  end
-
-  it 'creates group' do
-    expect(chef_run).to create_group('service')
-  end
-
   it 'creates directory for hazelcast' do
     expect(chef_run).to create_directory('/home/user').with(recursive: true)
   end
