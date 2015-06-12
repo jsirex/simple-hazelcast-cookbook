@@ -6,7 +6,7 @@ description      'Installs only hazelcast'
 long_description 'Installs only hazelcast'
 issues_url       'https://github.com/jsirex/simple-hazelcast-cookbook/issues'
 source_url       'https://github.com/jsirex/simple-hazelcast-cookbook'
-version          '0.2.0'
+version          '0.2.1'
 
 
 depends 'ark'
