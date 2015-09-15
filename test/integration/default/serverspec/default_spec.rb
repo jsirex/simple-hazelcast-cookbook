@@ -11,3 +11,8 @@ describe process('java') do
   its(:user) { should eq 'hazelcast' }
   its(:args) { should match /-DtestOpt=true/}
 end
+
+describe file('/etc/sv/hazelcast/run') do
+  it { should be_file }
+  its(:content) { should match 'export CLASSPATH=/opt/hazelcast/hazelcast-all-3.4.2.jar:/tmp' }
+end

@@ -22,8 +22,10 @@ suites:
       - recipe[simple-hazelcast-test]
     attributes:
       hazelcast:
+        class_path:
+          custom_path: /tmp
         java_opts:
-          - -Xmx512m
-          - -DtestOpt=true
-          - -Dconfig.xml=/tmp/config.xml
+          mem: -Xmx512m
+          test_opt: -DtestOpt=true
+          config: -Dconfig.xml=/tmp/config.xml
 
