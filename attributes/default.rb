@@ -6,4 +6,5 @@ default['hazelcast']['download_url'] = 'https://oss.sonatype.org/content/reposit
 default['hazelcast']['checksum'] = 'd80efb8c56373bd175f8a45f300ba3a33d007be2413ccc62a848ade54af04a17'
 
 default['hazelcast']['java_home'] = nil
-default['hazelcast']['java_opts'] = []
+default['hazelcast']['java_opts'] = {}
+default['hazelcast']['class_path'] = {}

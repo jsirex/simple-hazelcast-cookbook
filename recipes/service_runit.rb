@@ -1,5 +1,4 @@
 include_recipe 'runit'
-include_recipe 'simple-hazelcast::_jar'
 
 runit_service 'hazelcast' do
   default_logger true
@@ -8,9 +7,9 @@ runit_service 'hazelcast' do
     'home' => node['hazelcast']['home'],
     'java_home' => node['hazelcast']['java_home'],
     'java_opts' => node['hazelcast']['java_opts'],
-    'jar' => node['hazelcast']['jar']
+    'java_class_path' => node['hazelcast']['class_path']
   )
-  subscribes :restart, "remote_file[#{node['hazelcast']['jar']}]"
+  subscribes :restart, 'remote_file[hazelcast-jar]'
 
   action [:enable, :start]
 end
