@@ -6,10 +6,11 @@ description      'Installs only hazelcast'
 long_description 'Installs only hazelcast'
 issues_url       'https://github.com/jsirex/simple-hazelcast-cookbook/issues'
 source_url       'https://github.com/jsirex/simple-hazelcast-cookbook'
-version          '0.2.1'
+version          '1.0.0'
 
 
-depends 'ark'
-depends 'runit'
+depends 'ark', '~> 0.9'
+depends 'runit', '~> 1.6'
 
 supports 'debian'
+supports 'centos'

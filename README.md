@@ -9,20 +9,31 @@ Jar name to use will be extracted from this url.
 
 # Configuration
 
-There is only one configuration way available: `node['hazelcast']['java_opts']`
+## Class path
+
+There is hash `node['hazelcast']['class_path']`. Add your custom class pathes here.
+Key is for name, value is actual path for class path. Hazelcast jar will be automatically added here.
+
+
+## Java opts
+
+There is hash `node['hazelcast']['java_opts']`. Add your custom java options here.
 Use it to configure both java and hazelcast.
-Provide your own hazelcast.xml for this in your wrapper cookbook
+Key is for name, value is actual java option string passed as argument to command line.
+
+Provide your own hazelcast.xml for this in your wrapper cookbook.
 
 # Requirements
 
 ## Platform:
 
-* Debian
+* debian
+* centos
 
 ## Cookbooks:
 
-* ark
-* runit
+* ark (~> 0.9)
+* runit (~> 1.6)
 
 # Attributes
 
@@ -32,7 +43,8 @@ Provide your own hazelcast.xml for this in your wrapper cookbook
 * `node['hazelcast']['download_url']` -  Defaults to `https://oss.sonatype.org/content/repositories/releases/com/hazelcast/hazelcast-all/3.4.2/hazelcast-all-3.4.2.jar`.
 * `node['hazelcast']['checksum']` -  Defaults to `d80efb8c56373bd175f8a45f300ba3a33d007be2413ccc62a848ade54af04a17`.
 * `node['hazelcast']['java_home']` -  Defaults to `nil`.
-* `node['hazelcast']['java_opts']` -  Defaults to `[ ... ]`.
+* `node['hazelcast']['java_opts']` -  Defaults to `{ ... }`.
+* `node['hazelcast']['class_path']` -  Defaults to `{ ... }`.
 
 # Recipes
 
@@ -40,9 +52,12 @@ Provide your own hazelcast.xml for this in your wrapper cookbook
 * simple-hazelcast::default
 * simple-hazelcast::install
 * simple-hazelcast::service_runit
+* simple-hazelcast::user
 
 # License and Maintainer
 
 Maintainer:: Yauhen Artsiukhou (<yauhen_artsiukhou@epam.com>)
+Source:: https://github.com/jsirex/simple-hazelcast-cookbook
+Issues:: https://github.com/jsirex/simple-hazelcast-cookbook/issues
 
 License:: apache 2

@@ -7,6 +7,16 @@ Jar name to use will be extracted from this url.
 
 # Configuration
 
-There is only one configuration way available: `node['hazelcast']['java_opts']`
+## Class path
+
+There is hash `node['hazelcast']['class_path']`. Add your custom class pathes here.
+Key is for name, value is actual path for class path. Hazelcast jar will be automatically added here.
+
+
+## Java opts
+
+There is hash `node['hazelcast']['java_opts']`. Add your custom java options here.
 Use it to configure both java and hazelcast.
-Provide your own hazelcast.xml for this in your wrapper cookbook
+Key is for name, value is actual java option string passed as argument to command line.
+
+Provide your own hazelcast.xml for this in your wrapper cookbook.
