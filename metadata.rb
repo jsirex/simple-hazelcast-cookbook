@@ -1,6 +1,6 @@
 name             'simple-hazelcast'
 maintainer       'Yauhen Artsiukhou'
-maintainer_email 'yauhen_artsiukhou@epam.com'
+maintainer_email 'jsirex@gmail.com'
 license          'apache 2'
 description      'Installs only hazelcast'
 long_description 'Installs only hazelcast'

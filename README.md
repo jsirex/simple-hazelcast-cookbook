@@ -56,7 +56,7 @@ Provide your own hazelcast.xml for this in your wrapper cookbook.
 
 # License and Maintainer
 
-Maintainer:: Yauhen Artsiukhou (<yauhen_artsiukhou@epam.com>)
+Maintainer:: Yauhen Artsiukhou (<jsirex@gmail.com>)
 Source:: https://github.com/jsirex/simple-hazelcast-cookbook
 Issues:: https://github.com/jsirex/simple-hazelcast-cookbook/issues
 
