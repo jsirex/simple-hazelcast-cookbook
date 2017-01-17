@@ -1,13 +1,14 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe 'simple-hazelcast::install' do
   cached(:chef_run) do
-    ChefSpec::ServerRunner.new do |node|
-      node.set['hazelcast']['download_url'] = 'http://mymirror/hz.jar'
-      node.set['hazelcast']['user'] = 'user'
-      node.set['hazelcast']['group'] = 'service'
-      node.set['hazelcast']['home'] = '/home/user'
-      node.set['hazelcast']['class_path']['custom_jar'] = 'custom.jar'
+    ChefSpec::SoloRunner.new(platform: 'debian', version: '8.6') do |node|
+      node.override['hazelcast']['download_url'] = 'http://mymirror/hz.jar'
+      node.override['hazelcast']['user'] = 'user'
+      node.override['hazelcast']['group'] = 'service'
+      node.override['hazelcast']['home'] = '/home/user'
+      node.override['hazelcast']['class_path']['custom_jar'] = 'custom.jar'
     end.converge(described_recipe)
   end
 

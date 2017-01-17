@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 hazelcast_jar = ::File.join(node['hazelcast']['home'], ::File.basename(node['hazelcast']['download_url']))
 node.default['hazelcast']['class_path']['hazelcast-jar'] = hazelcast_jar
 

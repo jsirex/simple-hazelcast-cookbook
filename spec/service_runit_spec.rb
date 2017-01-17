@@ -1,9 +1,10 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe 'simple-hazelcast::service_runit' do
   cached(:chef_run) do
-    ChefSpec::ServerRunner.new do |node|
-      node.set['hazelcast']['download_url'] = 'http://mymirror/hz.jar'
+    ChefSpec::SoloRunner.new(platform: 'debian', version: '8.6') do |node|
+      node.override['hazelcast']['download_url'] = 'http://mymirror/hz.jar'
     end.converge(described_recipe)
   end
 

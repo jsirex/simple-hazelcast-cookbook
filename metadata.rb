@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 name             'simple-hazelcast'
 maintainer       'Yauhen Artsiukhou'
 maintainer_email 'jsirex@gmail.com'
@@ -6,11 +7,12 @@ description      'Installs only hazelcast'
 long_description 'Installs only hazelcast'
 issues_url       'https://github.com/jsirex/simple-hazelcast-cookbook/issues'
 source_url       'https://github.com/jsirex/simple-hazelcast-cookbook'
-version          '1.0.0'
+version          '1.0.2'
 
-
-depends 'ark', '~> 0.9'
-depends 'runit', '~> 1.6'
+depends 'ark', '>= 0.9'
+depends 'runit', '>= 1.6'
 
 supports 'debian'
 supports 'centos'
+
+recipe 'simple-hazelcast::default', 'Installs only hazelcast'

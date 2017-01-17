@@ -32,8 +32,8 @@ Provide your own hazelcast.xml for this in your wrapper cookbook.
 
 ## Cookbooks:
 
-* ark (~> 0.9)
-* runit (~> 1.6)
+* ark (>= 0.9)
+* runit (>= 1.6)
 
 # Attributes
 
@@ -48,11 +48,7 @@ Provide your own hazelcast.xml for this in your wrapper cookbook.
 
 # Recipes
 
-* simple-hazelcast::configure
-* simple-hazelcast::default
-* simple-hazelcast::install
-* simple-hazelcast::service_runit
-* simple-hazelcast::user
+* simple-hazelcast::default - Installs only hazelcast
 
 # License and Maintainer
 

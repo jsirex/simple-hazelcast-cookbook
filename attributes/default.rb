@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 default['hazelcast']['user'] = 'hazelcast'
 default['hazelcast']['group'] = 'hazelcast'
 default['hazelcast']['home'] = '/opt/hazelcast'

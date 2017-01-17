@@ -1,6 +1,5 @@
 # frozen_string_literal: true
-name 'simple-hazelcast-test'
+name 'simple-hazelcast-spec'
 version '0.1.0'
 
-depends 'java'
 depends 'simple-hazelcast'

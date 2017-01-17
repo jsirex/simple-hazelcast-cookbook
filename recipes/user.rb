@@ -1,9 +1,10 @@
+# frozen_string_literal: true
 user 'hazelcast user' do
   username node['hazelcast']['user']
   comment 'Hazelcast User'
   home node['hazelcast']['home']
   shell '/bin/bash'
-  supports manage_home: false
+  manage_home false
   action :create
   system true
 end
